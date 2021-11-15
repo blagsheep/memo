@@ -1,0 +1,193 @@
+/*
+ * Color
+ */
+
+/* Light mode
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: white;
+        color: black;
+    }
+}
+ */
+
+/* Dark mode
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: white;
+    }
+}
+*/
+
+$memo-blue: #074279;
+$memo-green:#2BBBBC;
+$memo-grey: #efefef;
+$memo-yellow:#EAE6C3;
+$memo-magenta:#96456E;
+$memo-dark-blue:#002c60;
+$memo-dark-green:#008588;
+$memo-dark-grey:#8b8a8b;
+$memo-dark-yellow:#b2af8d;
+$memo-dark-magenta:#60103e;
+
+
+/*
+ * Reset
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+ * Palette
+ */
+.color-demo{
+  display:flex;
+  div{
+    width: 15%;
+    height: 8vw;
+    margin: 0.5rem 0.25rem;
+  }
+  .color-blue{background-color: $memo-blue}
+  .color-dark-blue{background-color: $memo-dark-blue}
+  .color-green{background-color: $memo-green}
+  .color-dark-green{background-color: $memo-dark-green}
+  .color-yellow{background-color: $memo-yellow}
+  .color-dark-yellow{background-color: $memo-dark-yellow}
+  .color-magenta{background-color: $memo-magenta}
+  .color-dark-magenta{background-color: $memo-dark-magenta}
+  .color-grey{background-color: $memo-grey}
+  .color-dark-grey{background-color: $memo-dark-grey}
+}
+
+
+
+/*
+ * Typography
+ */
+html{
+  font-family: apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+}
+
+/*
+ * Headlines
+ */
+h1,h2{
+  margin: 0;
+}
+h1{
+  color: $memo-blue;
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+}
+h2{
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+
+/*
+ * Navigation
+ */
+.navigation{
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $memo-dark-blue;
+}
+
+/*
+ * Links
+ */
+a,
+a:visited{
+  color: $memo-magenta;
+  text-decoration: none;
+}
+a:hover{
+  color: $memo-dark-magenta;
+}
+
+
+/*
+ * Flash Messages
+ */
+.flash{
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 0.25rem;
+}
+.flash.success{
+  color: $memo-green;
+  border: 1px solid $memo-green;
+}
+.flash.notice{
+  color: $memo-dark-grey;
+  border: 1px solid $memo-dark-grey;
+}
+.flash.error, .flash.alert{
+  color: $memo-magenta;
+  border: 1px solid $memo-magenta;
+}
+
+
+/*
+ * Forms
+ */
+form{
+  input,
+  label,
+  select{
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    border-radius: 0.25rem;
+    outline:none;
+  }
+  input{
+    font-size: 1rem;
+    padding:0.5rem;
+    border: 1px solid $memo-dark-grey;
+    transition: 100ms box-shadow ease-in-out;
+    &:focus{
+      border: 1px solid $memo-blue;
+      box-shadow: 0 0 0 3px $memo-blue;
+      outline: 3px solid transparent;
+    }
+    &:hover{
+      border: 1px solid $memo-dark-blue;
+    }
+  }
+  input[type=text]{
+    line-height: 1;
+    height: 2.25rem;
+  }
+  input[type=submit],
+  label{
+    margin-top: 1rem;
+  }
+  input[type=submit]{
+    background: $memo-grey;
+    border: 1px solid $memo-dark-grey;
+    &:hover{
+      border: 1px solid $memo-dark-blue;
+    }
+  }
+  input[type="file"] {
+    font-size: 0.9em;
+    padding-top: 0.35rem;
+  }
+  input[type="checkbox"] {
+    width: auto;
+    float: left;
+  }
+  textarea {
+    resize: vertical;
+  }
+
+}

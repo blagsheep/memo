@@ -1,0 +1,8 @@
+- if resource.errors.any?
+  .flash.error
+    - if resource.errors.count > 1
+      %ul
+        - resource.errors.full_messages.each do |msg|
+          %li= msg
+    - else
+      =resource.errors.full_messages.first+"."

@@ -1,0 +1,51 @@
+# https://guides.rubyonrails.org/i18n.html
+---
+de:
+
+  activerecord:
+    models:
+      user: Benutzer
+    attributes:
+      user:
+        name: Name
+        email: E-Mail
+        password: Kennwort
+        password_confirmation: Kennwort Bestätigung
+        terms: AGB
+
+  pages:
+    home:
+      welcome: Willkommen zu Memo
+
+  users:
+    settings:
+      title: Einstellungen
+
+  forms:
+    signup:
+      title: Registrierung
+      submit: Registrieren
+      terms_acceptance: Ich akzeptiere die
+      terms: AGB
+    signin:
+      title: Login
+      submit: Einloggen
+    password_reset:
+      title: Kennwort zurücksetzen
+      submit: Absenden
+    unlock_resend:
+      title: Anleitung zur Kontoentsperrung erneut zusenden
+      submit: Absenden
+    confirmation_resend:
+        title: E-Mail zur Kontobestätigung erneut zusenden
+        submit: Absenden
+
+  navigation:
+    signout: Ausloggen
+    signup: Registrieren
+    signin: Einloggen
+    posts: Artikel
+
+  notifications:
+    general:
+      error: Ein Fehler ist aufgetreten.

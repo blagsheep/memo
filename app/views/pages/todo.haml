@@ -1,0 +1,69 @@
+- title t('Todo')
+
+
+%h2 Palette
+
+.color-demo
+  .color-blue
+  .color-dark-blue
+  .color-green
+  .color-dark-green
+  .color-yellow
+  .color-dark-yellow
+  .color-magenta
+  .color-dark-magenta
+  .color-grey
+  .color-dark-grey
+
+
+%hr
+
+%h2 Todo Development
+
+%ul
+  %li create posts
+  %li Check counter caches https://blog.appsignal.com/2018/06/19/activerecords-counter-cache.html
+
+
+%ul
+  %li user can have many groups, groups can have many users
+  %li posts for groups,https://guides.rubyonrails.org/i18n.html#translating-model-content
+  %li set route after sign out
+  %li check queries (QA checklist?), and introduce UUIDs: https://pawelurbanek.com/uuid-order-rails
+  %li authorization https://altalogy.com/blog/rails-6-user-accounts-with-3-types-of-roles/
+  %li make user controller more safe, see "you_are_not_admin", check application controller skl
+  %li check settings for device lockable / test
+  %li Sprache für E-Mails setzen
+  %li Add user activity log
+  %li Staging Environment: https://medium.com/the-boujoukos-bulletin/deploy-an-existing-rails-project-to-a-staging-environment-on-heroku-aee2eb99daeb
+  %li Staging Environment: https://devcenter.heroku.com/articles/deploying-to-a-custom-rails-environment
+  %li Staging Environment: https://myrailslearnings.wordpress.com/2018/11/22/password-protect-staging/
+  %li Staging Environment: add Sidekiq or Resque for mails
+  %li apply continous typography:https://awesomephant.github.io/continuous-typography/
+  %li evaluate https://translation.io/rails/pricing
+  %li make specific routes: https://andycroll.com/ruby/be-specific-when-defining-routes/
+  %li implement an invite-system, think about using state machines for the invite
+
+%hr
+
+%h2 Todo Production
+
+%ul
+  %li Caching
+  %li Rack Throttling https://github.com/rack/rack-attack#throttling https://bigbinary.com/blog/how-to-mitigate-ddos-using-rack-attack
+  %li Devise 2FA testen https://github.com/tinfoil/devise-two-factor
+  %li add public/robots.txt
+  %li add monitoring: http://tomrothe.de/posts/dead-simple-rails-monitoring.html
+  %li tbd: set locale from domain or browser language
+  %li clean up codebase / comments
+
+
+- if current_user
+
+  %hr
+
+  %h2 Benutzer
+
+  =link_to(raw("Alle Benutzer"), users_path)
+  = " | "
+  =link_to(raw("Neuer Benutzer"), new_user_registration_path)

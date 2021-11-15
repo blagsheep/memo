@@ -1,0 +1,9 @@
+- if object.errors.any?
+  #error_explanation
+
+    = pluralize(@user.errors.count, "Fehler")
+    sind aufgetreten.
+
+    %ul
+      - object.errors.full_messages.each do |msg|
+        %li= msg

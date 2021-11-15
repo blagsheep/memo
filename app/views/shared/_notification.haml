@@ -1,0 +1,4 @@
+- flash.each do |key, value|
+  - next unless value.is_a? String
+  .flash{ :class => key}
+    = value

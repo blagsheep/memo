@@ -1,0 +1,30 @@
+.navigation
+
+  - if ENV['RAILS_ENV']=='development'
+    DEV
+    =I18n.locale
+    |
+
+  %a{:href => root_url}
+    Home
+  |
+  - if current_user
+    = link_to t('Todo'), root_url + "/todo"
+    |
+    %a{ :href => root_url + "/users/" + current_user.id.to_s + "/locale/de"}
+      Deutsch
+    |
+    %a{ :href => root_url + "/users/" + current_user.id.to_s + "/locale/en"}
+      English
+    |
+    = link_to "d", user_settings_path(@current_user)
+    |
+    = link_to t('navigation.signout'), destroy_user_session_path, method: :delete
+  - else
+    = link_to 'Deutsch', url_for( :locale => 'de' )
+    |
+    = link_to 'English', url_for( :locale => 'en' )
+    |
+    = link_to t('navigation.signup'), new_user_registration_path
+    |
+    = link_to t('navigation.signin'), new_user_session_path

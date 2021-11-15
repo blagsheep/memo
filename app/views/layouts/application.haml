@@ -1,0 +1,34 @@
+!!! 5
+%html{:lang => "de"}
+  %head
+    %title
+      Memo
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag asset_path('favicon.ico')
+    %meta{:name => "viewport", :content => "width=device-width,initial-scale=1.0, user-scalable=1"}
+
+  %body
+
+    .wrapper
+      .content
+        = render 'shared/navigation'
+        = render 'shared/notification'
+        %h1= yield(:title)
+        = yield
+
+
+      - if Rails.env.development?
+        .footer
+          %br
+          %a{ :href => "http://localhost:3000/rails/info/routes"}
+            Routes
+          %br
+          %br
+          = debug(params)
+
+
+

@@ -1,0 +1,12 @@
+= title t('forms.confirmation_resend.title')
+
+= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+
+  = render "users/shared/error_messages", resource: resource
+
+  .field
+    = f.label :email
+    = f.email_field :email, :autocomplete => "email", "aria-required" => true, required: true, :autofocus =>true, :value => (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email)
+
+  = f.submit t('forms.confirmation_resend.submit')
+

@@ -1,0 +1,21 @@
+= title t('forms.signin.title')
+
+= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+
+  = render "users/shared/error_messages", resource: resource
+
+  .field
+    = f.label :email
+    = f.email_field :email, :autocomplete => "email", "aria-required" => true, required: true, :autofocus =>true
+
+  .field
+    = f.label :password
+    = f.password_field :password, :autocomplete => "current-password", "aria-required" => true, required: true
+
+  = f.submit t('forms.signin.submit')
+
+  = link_to t('forms.password_reset.title'), new_password_path(resource_name)
+  %br
+  = link_to t('forms.confirmation_resend.title'), new_confirmation_path(resource_name)
+  %br
+  = link_to t('forms.unlock_resend.title'), new_unlock_path(resource_name)

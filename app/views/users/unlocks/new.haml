@@ -1,0 +1,11 @@
+= title t('forms.unlock_resend.title')
+
+= form_for(resource, :as => resource_name, :url => unlock_path(resource_name)) do |f|
+
+  = render "users/shared/error_messages", resource: resource
+
+  .field
+    = f.label :email
+    = f.email_field :email, :autocomplete => "email", required: true, "aria-required" => true, :autofocus =>true
+
+  = f.submit t('forms.signin.submit')
