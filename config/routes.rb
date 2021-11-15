@@ -25,6 +25,12 @@ Rails.application.routes.draw do
     resources :users
     resources :posts
 
+
+    # a user has normally one course
+    resources :users do
+      resource  :posts
+    end
+
   end
 
 end

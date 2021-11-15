@@ -44,7 +44,7 @@ de:
     signout: Ausloggen
     signup: Registrieren
     signin: Einloggen
-    posts: Artikel
+    create_post: Neuer Artikel
 
   notifications:
     general:

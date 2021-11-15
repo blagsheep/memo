@@ -12,6 +12,8 @@ class User < ApplicationRecord
   before_save :downcase_email
 
 
+  has_many :posts,        :dependent => :destroy
+
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates_presence_of   :name, :email, :terms

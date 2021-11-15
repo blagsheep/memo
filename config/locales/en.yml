@@ -44,8 +44,8 @@ en:
     signout: Logout
     signup: Register
     signin: Login
-    posts: Posts
-
+    create_post: New Article
+  
   notifications:
     general:
       error: An error has occured.

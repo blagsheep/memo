@@ -17,9 +17,12 @@
     %a{ :href => root_url + "/users/" + current_user.id.to_s + "/locale/en"}
       English
     |
-    = link_to "d", user_settings_path(@current_user)
+    =link_to t('navigation.create_post'), new_post_path
+    |
+    = link_to "Settings", user_settings_path(@current_user)
     |
     = link_to t('navigation.signout'), destroy_user_session_path, method: :delete
+
   - else
     = link_to 'Deutsch', url_for( :locale => 'de' )
     |
