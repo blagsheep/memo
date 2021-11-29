@@ -11,7 +11,6 @@ de:
         email: E-Mail
         password: Kennwort
         password_confirmation: Kennwort Bestätigung
-        terms: AGB
 
   pages:
     home:

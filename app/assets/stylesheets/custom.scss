@@ -1,4 +1,13 @@
 /*
+ * Fonts
+ */
+ @font-face {
+   font-family: "Source Serif";
+   src: url("SourceSerif4Variable-Roman.otf.woff") format("woff");
+ }
+
+
+/*
  * Color
  */
 
@@ -69,11 +78,8 @@ $memo-dark-magenta:#60103e;
  * Typography
  */
 html{
-  @font-face {
-    font-family: "Source Serif";
-    src: url("SourceSerif4Variable-Roman.otf.woff") format("woff");
-  }
-  font-family: "Source Serif", apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*"Source Serif", */
+  font-family: apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.25rem;
 }
 
@@ -84,7 +90,7 @@ h1,h2{
   margin: 0;
 }
 h1{
-  color: $memo-dark-green;
+  color: $memo-blue;
   font-size: 1.5rem;
   margin: 1rem 0 0.5rem;
 }

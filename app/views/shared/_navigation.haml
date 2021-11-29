@@ -1,6 +1,6 @@
 .navigation
 
-  - if ENV['RAILS_ENV']=='development'
+  -# if ENV['RAILS_ENV']=='development'
     DEV
     =I18n.locale
     |
@@ -21,8 +21,9 @@
     |
     =link_to t('navigation.all_posts'), posts_path
     |
-    = link_to "Settings", user_settings_path(@current_user)
-    |
+    -#
+      = link_to t('users.settings.title'), user_settings_path(@current_user)
+      |
     = link_to t('navigation.signout'), destroy_user_session_path, method: :delete
 
   - else
