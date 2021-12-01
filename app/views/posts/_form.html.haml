@@ -11,5 +11,8 @@
   .field
     = f.label :body
     = f.rich_text_area :body
+  .field
+    = f.label :photo
+    = f.file_field :photo, accept: 'image/png,image/jpeg'
   .actions
     = f.submit 'Save'

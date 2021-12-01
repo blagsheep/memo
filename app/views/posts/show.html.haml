@@ -6,6 +6,8 @@
   =@post.user.name
 %p= @post.body
 
+= image_tag(@post.photo, width: 200) if @post.photo.attached? 
+
 
 = link_to 'Edit', edit_post_path(@post)
 \|
