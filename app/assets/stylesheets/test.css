@@ -1,7 +1,7 @@
 /*
  * Core Layout
  * https://joshwcomeau.com/css/full-bleed/
- */
+ 
 
 .wrapper {
   display: grid;
@@ -17,3 +17,4 @@
   width: 100%;
   grid-column: 1 / 4;
 }
+*/
