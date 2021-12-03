@@ -40,6 +40,22 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :amazon_prod
 
+  config.action_mailer.default_url_options = { host: 'captain-memo.com' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_options = {from: 'mail@captain-memo.com'}
+  config.action_mailer.perform_caching = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "in-v3.mailjet.com",
+    :port                 => 587,
+    :user_name            => ENV['MEMO_MAILJET_USER'],
+    :password             => ENV['MEMO_MAILJET_PASSWORD'],
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
+
+
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
