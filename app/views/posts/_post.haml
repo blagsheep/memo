@@ -1,0 +1,12 @@
+%br
+%br
+
+%h2= link_to post.title , post
+
+von 
+= post.user.name
+| 
+= link_to t('posts.edit'), edit_post_path(post)
+| 
+= link_to t('posts.destroy'), post, method: :delete, data: { confirm: 'Are you sure?' }
+

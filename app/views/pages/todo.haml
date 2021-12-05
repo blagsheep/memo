@@ -1,6 +1,23 @@
 - title t('Todo')
 
 
+
+%h2 Next
+
+%ul
+  %li Build nice article index, show views
+  %li Translate all current views
+  %li Add avatars to users
+  %li Clean Up Navgation
+  %li Create Account Luzi
+  %li Check Video Preview
+  %li Get EXIF Data for photos, GPS data
+  %li Display GPS Data of all photos per article
+  %li Make sure articels are translated automatically
+  %li Add more languages (Spanish, Italian) > DEEPL
+
+%hr
+
 %h2 Palette
 
 .color-demo
@@ -15,16 +32,12 @@
   .color-grey
   .color-dark-grey
 
-
 %hr
 
-%h2 Todo Development
+%h2 Later
 
 %ul
   %li Check counter caches https://blog.appsignal.com/2018/06/19/activerecords-counter-cache.html
-
-
-%ul
   %li set route after sign out
   %li check queries (QA checklist?), and introduce UUIDs: https://pawelurbanek.com/uuid-order-rails
   %li authorization https://altalogy.com/blog/rails-6-user-accounts-with-3-types-of-roles/
@@ -45,13 +58,12 @@
 %h2 Todo Production
 
 %ul
-  %li Caching
-  %li Rack Throttling https://github.com/rack/rack-attack#throttling https://bigbinary.com/blog/how-to-mitigate-ddos-using-rack-attack
   %li Devise 2FA testen https://github.com/tinfoil/devise-two-factor
   %li add public/robots.txt
   %li add monitoring: http://tomrothe.de/posts/dead-simple-rails-monitoring.html
   %li tbd: set locale from domain or browser language
   %li clean up codebase / comments
+  %li Caching
 
 
 - if current_user

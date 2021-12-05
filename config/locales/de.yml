@@ -5,6 +5,7 @@ de:
   activerecord:
     models:
       user: Benutzer
+      post: Artikel
     attributes:
       user:
         name: Name
@@ -49,3 +50,7 @@ de:
   notifications:
     general:
       error: Ein Fehler ist aufgetreten.
+
+  posts:
+    edit: bearbeiten
+    destroy: löschen

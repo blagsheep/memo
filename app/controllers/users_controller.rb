@@ -23,10 +23,6 @@ class UsersController < ApplicationController
     @user= User.find(params[:id])
   end
 
-  def settings
-    @user= User.find(params[:id])
-  end
-
   def locale
     @user= User.find(params[:id])
     @user.locale = params[:locale]

@@ -22,6 +22,6 @@ class Users::SessionsController < Devise::SessionsController
 
     # If you have extra params to permit, append them to the sanitizer.
     def after_sign_in_path_for(resource)
-      home_path
+      posts_path
     end
 end

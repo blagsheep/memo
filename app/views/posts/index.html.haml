@@ -1,25 +1,5 @@
-%h1 Listing posts
+%h1=t('navigation.all_posts')
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Body
-      %th User
-      %th
-      %th
-      %th
+- @posts.each do |post|
+  =render(post)
 
-  %tbody
-    - @posts.each do |post|
-      %tr
-        %td= post.title
-        %td= post.body
-        %td= post.user.name
-        %td= link_to 'Show', post
-        %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Post', new_post_path

@@ -5,6 +5,7 @@ en:
   activerecord:
     models:
       user: User
+      post: Article
     attributes:
       user:
         name: Name
@@ -50,3 +51,7 @@ en:
   notifications:
     general:
       error: An error has occured.
+
+  posts:
+    edit: edit
+    destroy: destroy
