@@ -57,6 +57,9 @@ de:
     body: Inhalt
     attachment: Anhang
     edit: Artikel bearbeiten
+    successfully_created: Der Artikel wurde erfolgreich erstellt.
+    successfully_updated: Der Artikel wurde erfolgreich aktualisiert.
+    successfully_destroyed: Der Artikel wurde erfolgreich gelöscht.
 
   content:
     edit: bearbeiten

@@ -3,6 +3,9 @@
 
 %h2= link_to post.title , post
 
+- if !post.body.embeds.empty?
+  = image_tag post.body.embeds.find{|embeds| embeds.image?}.variant(resize_to_limit: [200, 200]) 
+
 von 
 = post.user.name
 | 

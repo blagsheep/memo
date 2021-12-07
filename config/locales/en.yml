@@ -58,6 +58,9 @@ en:
     body: Content
     attachment: Attachment
     edit: Edit article
+    successfully_created: Post was successfully created.
+    successfully_updated: Post was successfully updated.
+    successfully_destroyed: Post was successfully created.
 
   content: 
     edit: edit

@@ -4,7 +4,8 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    # avoid N+1 query: https://edgeguides.rubyonrails.org/action_text_overview.html#avoid-n-1-queries
+    @posts = Post.all.with_rich_text_body_and_embeds
   end
 
   # GET /posts/1
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
+      redirect_to @post, notice: t('posts.successfully_created')
     else
       render :new
     end
@@ -35,7 +36,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
+      redirect_to @post, notice: t('posts.successfully_updated')
     else
       render :edit
     end
@@ -44,7 +45,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   def destroy
     @post.destroy
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    redirect_to posts_url, notice: t('posts.successfully_destroyed')
   end
 
   private
