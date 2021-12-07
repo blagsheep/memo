@@ -46,11 +46,20 @@ de:
     signin: Einloggen
     all_posts: Artikel
     create_post: Neuer Artikel
+    back: zurück
 
   notifications:
     general:
       error: Ein Fehler ist aufgetreten.
 
   posts:
+    title: Titel
+    body: Inhalt
+    attachment: Anhang
+    edit: Artikel bearbeiten
+
+  content:
     edit: bearbeiten
     destroy: löschen
+    show: anzeigen
+    save: speichern

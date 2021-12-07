@@ -6,13 +6,13 @@
         - @post.errors.full_messages.each do |message|
           %li= message
   .field
-    = f.label :title
+    = f.label :title, t('posts.title')
     = f.text_field :title
   .field
-    = f.label :body
+    = f.label :body, t('posts.body')
     = f.rich_text_area :body
   .field
-    = f.label :photo
+    = f.label :photo,  t('posts.attachment')
     = f.file_field :photo, accept: 'image/png,image/jpeg'
   .actions
-    = f.submit 'Save'
+    = f.submit t('content.save')

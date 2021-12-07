@@ -47,11 +47,20 @@ en:
     signin: Login
     all_posts: Articles
     create_post: New Article
+    back: back
   
   notifications:
     general:
       error: An error has occured.
 
   posts:
+    title: Title
+    body: Content
+    attachment: Attachment
+    edit: Edit article
+
+  content: 
     edit: edit
     destroy: destroy
+    show: show
+    save: save
