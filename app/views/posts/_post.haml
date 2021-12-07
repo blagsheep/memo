@@ -3,13 +3,24 @@
 
 %h2= link_to post.title , post
 
-- if !post.body.embeds.empty?
-  = image_tag post.body.embeds.find{|embeds| embeds.image?}.variant(resize_to_limit: [200, 200]) 
-
 von 
 = post.user.name
 | 
 = link_to t('content.edit'), edit_post_path(post)
 | 
 = link_to t('content.destroy'), post, method: :delete, data: { confirm: 'Are you sure?' }
+
+- if !post.body.embeds.empty?
+
+  %br
+  %br 
+  
+  =# image_tag post.body.embeds[1].variant(resize_to_limit: [200, 200]) 
+  =#post.body.embeds.count.to_s + " embedded attachments"
+
+  - post.body.embeds.each do |embed|
+    = image_tag embed.variant(resize_to_limit: [200, 100])
+
+
+
 
