@@ -5,8 +5,8 @@
   von 
   =@post.user.name
 
-
-%p= @post.body
+%p
+  =@post.body
 
 
 - if @post.photo.attached? 
@@ -15,7 +15,6 @@
   = image_tag(@post.photo.variant(resize: 200), width: 200) 
   %br
   %br
-  =#debug(MiniMagick::Image.open(@post.photo).exif )
 
 %br
 %br

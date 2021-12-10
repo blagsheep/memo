@@ -18,8 +18,8 @@ von
   =# image_tag post.body.embeds[1].variant(resize_to_limit: [200, 200]) 
   =#post.body.embeds.count.to_s + " embedded attachments"
 
-  - post.body.embeds.each do |embed|
-    = image_tag embed.variant(resize_to_limit: [200, 100])
+  - post.body.embeds.each do |embedded_image|
+    = image_tag embedded_image.variant(resize_to_limit: [200, 100])
 
 
 
