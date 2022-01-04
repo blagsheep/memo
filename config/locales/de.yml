@@ -44,7 +44,7 @@ de:
     signout: Ausloggen
     signup: Registrieren
     signin: Einloggen
-    all_posts: Artikel
+    all_posts: Alle Artikel
     create_post: Neuer Artikel
     back: zurück
 
@@ -60,6 +60,7 @@ de:
     successfully_created: Der Artikel wurde erfolgreich erstellt.
     successfully_updated: Der Artikel wurde erfolgreich aktualisiert.
     successfully_destroyed: Der Artikel wurde erfolgreich gelöscht.
+    not_allowed_to_edit: Du darfst diesen Artikel nicht bearbeiten.
 
   content:
     edit: bearbeiten

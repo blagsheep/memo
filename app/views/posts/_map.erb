@@ -7,19 +7,15 @@
   zoom: 9 // starting zoom
   });
 
-
 <% embeds.each do |embedded_image| %>
-
-  <% if !embedded_image.metadata["longitude"].nil? %> 
-    
-    // Create a default Marker and add it to the map.
+  <% if !embedded_image.metadata["longitude"].nil? %>     
     const marker<%=embedded_image.id%> = new mapboxgl.Marker()
     .setLngLat([<%=embedded_image.metadata["longitude"]%>, <%=embedded_image.metadata["latitude"]%>])
     .addTo(map);
-  
   <% end %>
-
 <% end %>
-
-
 </script>
+
+<style>
+  #map { width: 100%; height: 300px; }
+</style>

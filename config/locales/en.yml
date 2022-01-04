@@ -58,9 +58,10 @@ en:
     body: Content
     attachment: Attachment
     edit: Edit article
-    successfully_created: Post was successfully created.
-    successfully_updated: Post was successfully updated.
-    successfully_destroyed: Post was successfully created.
+    successfully_created: Article was successfully created.
+    successfully_updated: Article was successfully updated.
+    successfully_destroyed: Article was successfully created.
+    not_allowed_to_edit: You are not allowed to edit this article.
 
   content: 
     edit: edit

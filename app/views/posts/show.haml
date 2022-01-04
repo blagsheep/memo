@@ -5,42 +5,47 @@
   von 
   =@post.user.name
 
+%br
+%br
 =@post.body
 
 - if !@post.body.embeds.empty?
-
-  %br
-  %hr
-  %br 
   
-  #map
+  =#debug(@post.body.embeds[0])
+
+  - if @post.body.embeds[0].metadata["longitude"]
+
+    %br
+    %hr
+    %br 
+    #map
+    = render :partial => 'map', :locals => { :embeds => @post.body.embeds }
+
 
 
 
 =# NOT USED CURRENTLY
 
-- if @post.photo.attached? 
-  
-  %br
-  = image_tag(@post.photo.variant(resize: 200), width: 200) 
-  %br
-  %br
+=#- if @post.photo.attached? 
+=#  
+=#  %br
+=#  = image_tag(@post.photo.variant(resize: 200), width: 200) 
+=#  %br
+=#  %br
 
-%br
+
+
 %br
 %hr
 %br
-= link_to t('content.edit'), edit_post_path(@post)
-\|
-= link_to t('navigation.back'), posts_path
+= link_to t('navigation.all_posts'), posts_path
+- if current_user == @post.user
+  \|
+  = link_to t('content.edit'), edit_post_path(@post)
 
 
 
-:css
-  #map { width: 100%; height: 300px; }
 
 
-- if !@post.body.embeds.empty?
-  = render :partial => 'map', :locals => { :embeds => @post.body.embeds }
 
-  
+

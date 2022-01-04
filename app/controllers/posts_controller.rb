@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :require_permission, only: [:edit, :update, :destroy]
+  
   # GET /posts
   def index
     # avoid N+1 query: https://edgeguides.rubyonrails.org/action_text_overview.html#avoid-n-1-queries
-    @posts = Post.all.with_rich_text_body_and_embeds
+    @posts = Post.all.with_rich_text_body_and_embeds.order(created_at: :desc)
   end
 
   # GET /posts/1
@@ -49,6 +50,7 @@ class PostsController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
@@ -57,5 +59,11 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:title, :body, :photo, :user_id)
+    end
+
+    def require_permission
+      if current_user != Post.find(params[:id]).user
+        redirect_to root_path, notice: t('posts.not_allowed_to_edit')
+      end
     end
 end

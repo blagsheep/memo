@@ -2,15 +2,21 @@
 %br
 
 %h2= link_to post.title , post
-
-von 
+ 
 = post.user.name
 | 
-= link_to t('content.edit'), edit_post_path(post)
-| 
-= link_to t('content.destroy'), post, method: :delete, data: { confirm: 'Are you sure?' }
+=post.updated_at.strftime("%d.%m.%Y %H:%M")
+
+
+- if current_user == post.user
+  | 
+  = link_to t('content.edit'), edit_post_path(post)
+  | 
+  = link_to t('content.destroy'), post, method: :delete, data: { confirm: 'Are you sure?' }
+
 
 - if !post.body.embeds.empty?
+
 
   %br
   %br 
@@ -20,7 +26,7 @@ von
 
   - post.body.embeds.each do |embedded_image|
     = image_tag embedded_image.variant(resize_to_limit: [200, 100])
-    = #debug(embedded_image)
+    =# debug(embedded_image)
 
 
 
