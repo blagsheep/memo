@@ -5,9 +5,19 @@
   von 
   =@post.user.name
 
-%p
-  =@post.body
+=@post.body
 
+- if !@post.body.embeds.empty?
+
+  %br
+  %hr
+  %br 
+  
+  #map
+
+
+
+=# NOT USED CURRENTLY
 
 - if @post.photo.attached? 
   
@@ -20,7 +30,17 @@
 %br
 %hr
 %br
-
 = link_to t('content.edit'), edit_post_path(@post)
 \|
 = link_to t('navigation.back'), posts_path
+
+
+
+:css
+  #map { width: 100%; height: 300px; }
+
+
+- if !@post.body.embeds.empty?
+  = render :partial => 'map', :locals => { :embeds => @post.body.embeds }
+
+  

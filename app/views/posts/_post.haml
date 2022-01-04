@@ -20,6 +20,7 @@ von
 
   - post.body.embeds.each do |embedded_image|
     = image_tag embedded_image.variant(resize_to_limit: [200, 100])
+    = #debug(embedded_image)
 
 
 
