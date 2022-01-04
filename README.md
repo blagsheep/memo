@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+### Heroku configuration
+
+Add support for activestorage previews
+
+- heroku buildpacks:add -i 1 https://github.com/heroku/heroku-buildpack-activestorage-preview
+- run `heroku buildpacks:add -i 1 https://github.com/heroku/heroku-buildpack-activestorage-preview` 

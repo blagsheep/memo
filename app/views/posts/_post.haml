@@ -25,8 +25,9 @@
   =#post.body.embeds.count.to_s + " embedded attachments"
 
   - post.body.embeds.each do |embedded_image|
-    = image_tag embedded_image.variant(resize_to_limit: [200, 100])
-    =# debug(embedded_image)
+    - if embedded_image.image?
+      = image_tag embedded_image.variant(resize_to_limit: [200, 100])
+      =# debug(embedded_image.video?)
 
 
 
