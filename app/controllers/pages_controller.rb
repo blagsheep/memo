@@ -4,8 +4,8 @@ class PagesController < ApplicationController
 
   def home
     #NotificationMailer.with(message: "My dear reader, this is a test!").notify_admin.deliver_later
-
-    @posts = Post.all
+    # avoid N+1 query: https://edgeguides.rubyonrails.org/action_text_overview.html#avoid-n-1-queries
+    @posts = Post.all.with_rich_text_body_and_embeds.order(created_at: :desc)
 
   end
 
