@@ -1,25 +1,19 @@
 %h1= @post.title
 
 
-%em
-  von 
-  =@post.user.name
+=render(@post)
 
-%br
-%br
-=@post.body
+
 
 - if !@post.body.embeds.empty?
   
-  =#debug(@post.body.embeds[0])
-
   - if @post.body.embeds[0].metadata["longitude"]
 
     %br
-    %hr
     %br 
-    #map
-    = render :partial => 'map', :locals => { :embeds => @post.body.embeds }
+
+    %img{:src => @post.map_with_pins, :style => "width:100%;"}
+  
 
 
 
@@ -32,20 +26,5 @@
 =#  = image_tag(@post.photo.variant(resize: 200), width: 200) 
 =#  %br
 =#  %br
-
-
-
-%br
-%hr
-%br
-= link_to t('navigation.all_posts'), posts_path
-- if current_user == @post.user
-  \|
-  = link_to t('content.edit'), edit_post_path(@post)
-
-
-
-
-
 
 

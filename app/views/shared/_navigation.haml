@@ -7,30 +7,26 @@
 
   - if current_user
     
-    -#= link_to t('Todo'), root_url + "/todo"
-      |
-    =link_to t('navigation.all_posts'), posts_path
+    = link_to t('navigation.all_posts'), root_url
+    =#link_to t('navigation.all_posts'), posts_path
     |
     =link_to t('navigation.create_post'), new_post_path
     |
     
     = link_to t('navigation.signout'), destroy_user_session_path, method: :delete
-    |
-    - if I18n.locale == :de 
-      %a{ :href => root_url + "/users/" + current_user.id.to_s + "/locale/en"}
-        English
-    - else
-      %a{ :href => root_url + "/users/" + current_user.id.to_s + "/locale/de"}
-        Deutsch
+    
+    -# if I18n.locale == :de 
+    -# %a{ :href => root_url + "/users/" + current_user.id.to_s + "/locale/en"}
+    -#   English
+    -# else
+    -# %a{ :href => root_url + "/users/" + current_user.id.to_s + "/locale/de"}
+    -#   Deutsch
 
 
   - else
-
+    = link_to t('navigation.all_posts'), root_url
+    |
     = link_to t('navigation.signup'), new_user_registration_path
     |
     = link_to t('navigation.signin'), new_user_session_path
-    |
-    - if I18n.locale == :de 
-      = link_to 'English', url_for( :locale => 'en' )
-    - else
-      = link_to 'Deutsch', url_for( :locale => 'de' )
+

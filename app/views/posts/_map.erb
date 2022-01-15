@@ -1,21 +1,33 @@
 <script>
+
   mapboxgl.accessToken = 'pk.eyJ1IjoibWFyY3VzLWZvcmNobmVyIiwiYSI6ImNreDA1MHI2czBkMXUycXFsd2JqcWVtZWoifQ.LUGuOxwCmOtjcghKK-dDRg';
-  const map = new mapboxgl.Map({
-  container: 'map', 
+  const map_<%=id%> = new mapboxgl.Map({
+  container: 'map_<%=id%>', 
   style: 'mapbox://styles/mapbox/streets-v11', 
   center: [<%=embeds[0].metadata["longitude"]%>, <%=embeds[0].metadata["latitude"]%>], 
   zoom: 9 // starting zoom
   });
 
-<% embeds.each do |embedded_image| %>
-  <% if !embedded_image.metadata["longitude"].nil? %>     
-    const marker<%=embedded_image.id%> = new mapboxgl.Marker()
-    .setLngLat([<%=embedded_image.metadata["longitude"]%>, <%=embedded_image.metadata["latitude"]%>])
-    .addTo(map);
+
+  <% embeds.each do |embedded_image| %>
+    <% if !embedded_image.metadata["longitude"].nil? %>     
+      const marker<%=embedded_image.id%> = new mapboxgl.Marker()
+      .setLngLat([<%=embedded_image.metadata["longitude"]%>, <%=embedded_image.metadata["latitude"]%>]);
+    <% end %>
   <% end %>
-<% end %>
+
+  document.onreadystatechange = () => {
+    if (document.readyState === 'complete') {
+      <% embeds.each do |embedded_image| %>
+        <% if !embedded_image.metadata["longitude"].nil? %>     
+          marker<%=embedded_image.id%>.addTo(map_<%=id%>);
+        <% end %>
+      <% end %>
+    }
+  };
+
 </script>
 
 <style>
-  #map { width: 100%; height: 300px; }
+  #map_<%=id%> { width: 100%; height: 300px; }
 </style>

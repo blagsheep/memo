@@ -8,18 +8,12 @@
     <meta name="robots" content="noindex, nofollow">
 
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    
-    <!-- TODO-->
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
-
-    <!-- TODO-->
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
-
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     
 
     = favicon_link_tag asset_path('favicon.ico')
     %meta{:name => "viewport", :content => "width=device-width,initial-scale=1.0, user-scalable=1"}
+
 
   %body
 
@@ -31,14 +25,22 @@
         = yield
 
 
-      -# if Rails.env.development?
-        .footer
+      .footer
+        - if Rails.env.development?
           %br
           %a{ :href => "http://localhost:3000/rails/info/routes"}
             Routes
           %br
           %br
           = debug(params)
+          %br
+          %br
+
+        - if I18n.locale == :de 
+          = link_to 'English', url_for( :locale => 'en' )
+        - else
+          = link_to 'Deutsch', url_for( :locale => 'de' )
+
 
   %br
   %br

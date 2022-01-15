@@ -1,4 +1,12 @@
 - #title t('.welcome')
 
 - @posts.each do |post|
+
+  %h2= link_to post.title , post
   =render(post)
+  
+  %br
+  %hr
+  %br
+  %br
+

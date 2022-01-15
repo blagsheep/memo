@@ -1,7 +1,3 @@
-%br
-%br
-
-%h2= link_to post.title , post
  
 = post.user.name
 | 
@@ -14,21 +10,20 @@
   | 
   = link_to t('content.destroy'), post, method: :delete, data: { confirm: 'Are you sure?' }
 
+%br
+%br
+=post.body
+
+
 
 - if !post.body.embeds.empty?
 
+  = #post.body.embeds[1].variant(resize_to_limit: [200, 200]) 
+  = #post.body.embeds.count.to_s + " embedded attachments"
 
-  %br
-  %br 
-  
-  =# image_tag post.body.embeds[1].variant(resize_to_limit: [200, 200]) 
-  =#post.body.embeds.count.to_s + " embedded attachments"
-
-  - post.body.embeds.each do |embedded_image|
-    - if embedded_image.image?
-      = image_tag embedded_image.variant(resize_to_limit: [600, 400])
+  -# post.body.embeds.each do |embedded_image|
+    -# if embedded_image.image?
+      =# CGI.escape(embedded_image.variant(resize_to_limit: [60, 40]).processed.service_url)
       =# debug(embedded_image.video?)
-
-
-
-
+      %br
+      %br
