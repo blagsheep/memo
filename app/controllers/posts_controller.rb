@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   def destroy
     @post.destroy
-    redirect_to posts_url, notice: t('posts.successfully_destroyed')
+    redirect_to root_url, notice: t('posts.successfully_destroyed')
   end
 
   private

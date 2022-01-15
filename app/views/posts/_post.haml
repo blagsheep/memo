@@ -1,12 +1,15 @@
  
 = post.user.name
-="-"
+&nbsp;
+&nbsp;
 =post.updated_at.strftime("%d.%m.%Y %H:%M")
 
 - if current_user == post.user
-  ="-" 
+  &nbsp;
+  &nbsp;
   = link_to t('content.edit'), edit_post_path(post)
-  ="-"
+  &nbsp;
+  &nbsp;
   = link_to t('content.destroy'), post, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
@@ -16,7 +19,6 @@
 
 
 - if !post.body.embeds.empty?
-
   = #post.body.embeds[1].variant(resize_to_limit: [200, 200]) 
   = #post.body.embeds.count.to_s + " embedded attachments"
 
