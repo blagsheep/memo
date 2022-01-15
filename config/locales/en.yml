@@ -56,6 +56,7 @@ en:
   posts:
     title: Title
     body: Content
+    map: Map
     attachment: Attachment
     edit: Edit article
     successfully_created: Article was successfully created.

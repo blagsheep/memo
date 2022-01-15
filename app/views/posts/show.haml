@@ -10,7 +10,7 @@
   - if @post.body.embeds[0].metadata["longitude"]
 
     %br
-    %br 
+    %h3= t('posts.map')
 
     %img{:src => @post.map_with_pins, :style => "width:100%;"}
   

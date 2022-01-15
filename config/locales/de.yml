@@ -55,6 +55,7 @@ de:
   posts:
     title: Titel
     body: Inhalt
+    map: Karte
     attachment: Anhang
     edit: Artikel bearbeiten
     successfully_created: Der Artikel wurde erfolgreich erstellt.
