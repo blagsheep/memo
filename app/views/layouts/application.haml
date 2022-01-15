@@ -33,13 +33,25 @@
           %br
           %br
           = debug(params)
-          %br
-          %br
+        
+        %br
+        %br
 
-        - if I18n.locale == :de 
-          = link_to 'English', url_for( :locale => 'en' )
+        - if current_user
+          
+          - if I18n.locale == :de 
+            %a{ :href => root_url + "/users/" + current_user.id.to_s + "/locale/en"}
+              English
+          - else
+            %a{ :href => root_url + "/users/" + current_user.id.to_s + "/locale/de"}
+              Deutsch
+
         - else
-          = link_to 'Deutsch', url_for( :locale => 'de' )
+
+          - if I18n.locale == :de 
+            = link_to 'English', url_for( :locale => 'en' )
+          - else
+            = link_to 'Deutsch', url_for( :locale => 'de' )
 
 
   %br
