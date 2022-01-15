@@ -99,6 +99,13 @@ h2{
   margin-bottom: 0.75rem;
 }
 
+/*
+ * Images
+ */
+
+img{
+  border-radius: 10px;
+}
 
 /*
  * Navigation
@@ -113,11 +120,11 @@ h2{
  */
 a,
 a:visited{
-  color: $memo-magenta;
+  color: $memo-dark-blue;
   text-decoration: none;
 }
 a:hover{
-  color: $memo-dark-magenta;
+  color: $memo-blue;
 }
 
 

@@ -1,13 +1,12 @@
  
 = post.user.name
-| 
+="-"
 =post.updated_at.strftime("%d.%m.%Y %H:%M")
 
-
 - if current_user == post.user
-  | 
+  ="-" 
   = link_to t('content.edit'), edit_post_path(post)
-  | 
+  ="-"
   = link_to t('content.destroy'), post, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
