@@ -3,12 +3,18 @@
  */
  @font-face {
   font-family: 'sourceserif';
-  src: url('SourceSerif4-Regular.ttf.woff2') format('woff2'),
-       url('SourceSerif4-Regular.ttf.woff') format('woff');
+  src: font-url('SourceSerif4-Regular.ttf.woff2') format('woff2'),
+       font-url('SourceSerif4-Regular.ttf.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
+
+.trix-content .attachment-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between; }
 
 
 /*
@@ -249,5 +255,4 @@ form{
   }
 
 }
-
 
