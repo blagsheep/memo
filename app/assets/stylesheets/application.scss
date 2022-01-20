@@ -21,7 +21,7 @@
   display: grid;
   grid-template-columns:
     1fr
-    calc(min(120ch, 100%))
+    calc(min(100ch, 100%))
     1fr;
   background: wheat;
 }
