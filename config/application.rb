@@ -34,5 +34,9 @@ module Memo
     end
 
 
+    config.i18n.available_locales = [:de, :en]
+    config.i18n.default_locale = :de
+
+
   end
 end
