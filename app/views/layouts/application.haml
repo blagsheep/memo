@@ -33,7 +33,6 @@
 
       .footer
         - if Rails.env.development?
-          %br
           %a{ :href => "http://localhost:3000/rails/info/routes"}
             Routes
           %br
@@ -58,10 +57,3 @@
             = link_to 'English', url_for( :locale => 'en' )
           - else
             = link_to 'Deutsch', url_for( :locale => 'de' )
-
-
-  %br
-  %br
-
-
-

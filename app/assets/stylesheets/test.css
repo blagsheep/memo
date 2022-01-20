@@ -1,20 +1,13 @@
 /*
- * Core Layout
- * https://joshwcomeau.com/css/full-bleed/
- 
+.trix-content .attachment-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: space-between;
+}
 
-.wrapper {
-  display: grid;
-  grid-template-columns:
-    1fr
-    min(65ch, 100%)
-    1fr;
-}
-.wrapper > * {
-  grid-column: 2;
-}
-.full-bleed {
-  width: 100%;
-  grid-column: 1 / 4;
+action-text-attachment, .trix-content .attachment-gallery > .attachment {
+  flex: 1 0 33%;
+  padding: 0px !important;
 }
 */

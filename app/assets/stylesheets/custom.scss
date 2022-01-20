@@ -2,9 +2,13 @@
  * Fonts
  */
  @font-face {
-   font-family: "Source Serif";
-   src: url("SourceSerif4Variable-Roman.otf.woff") format("woff");
- }
+  font-family: 'sourceserif';
+  src: url('SourceSerif4-Regular.ttf.woff2') format('woff2'),
+       url('SourceSerif4-Regular.ttf.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 
 /*
@@ -49,6 +53,28 @@ $memo-dark-magenta:#60103e;
 *::after {
   box-sizing: border-box;
 }
+body{
+  padding: 0px;
+  margin: 0px;
+}
+
+
+/*
+ * Content Area
+ */
+.content{
+  padding: 2rem;
+  background: white;
+  box-shadow:
+    //1px 2px 2px #{'hsl(220deg 60% 50% / 0.2)'},
+    //2px 4px 4px #{'hsl(220deg 60% 50% / 0.2)'},
+    1px 2px 2px #{'hsla(38, 74%, 50%, 0.2)'},
+    2px 4px 4px #{'hsla(38, 74%, 50%, 0.2)'};
+}
+.footer{
+  padding: 2rem;
+}
+
 
 /*
  * Palette
@@ -78,8 +104,7 @@ $memo-dark-magenta:#60103e;
  * Typography
  */
 html{
-  /*"Source Serif", */
-  font-family: apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: sourceserif, apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.25rem;
 }
 
@@ -88,7 +113,13 @@ html{
  */
 h1,h2{
   margin: 0;
+  text-transform: uppercase;
 }
+/*
+h1,h2::first-letter {
+  text-transform: uppercase;
+}
+*/
 h1{
   color: $memo-blue;
   font-size: 1.5rem;
@@ -96,23 +127,30 @@ h1{
 }
 h2{
   font-size: 1.35rem;
-  margin-bottom: 0.75rem;
+}
+hr{
+  border: 2.5px solid wheat;
 }
 
 /*
  * Images
  */
 
-img{
-  border-radius: 10px;
+img,
+video{
+  border-radius: 5px;
+  box-shadow:
+    1px 2px 2px #{'hsla(37, 42%, 18%, 0.2)'},
+    2px 4px 4px #{'hsla(37, 42%, 18%, 0.2)'};
 }
 
 /*
  * Navigation
  */
 .navigation{
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid $memo-dark-blue;
+  padding-bottom: 2rem;
+  border-bottom: 5px solid wheat;
+  margin-bottom: 2rem;
 }
 
 /*

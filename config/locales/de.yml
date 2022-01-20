@@ -41,9 +41,9 @@ de:
         submit: Absenden
 
   navigation:
-    signout: Ausloggen
+    signout: Abmelden
     signup: Registrieren
-    signin: Einloggen
+    signin: Anmelden
     all_posts: Alle Artikel
     create_post: Neuer Artikel
     back: zurück
