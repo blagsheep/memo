@@ -55,9 +55,10 @@ en:
 
   posts:
     title: Title
+    subject: Summary
     body: Content
     map: Map
-    attachment: Attachment
+    attachment: Title image
     edit: Edit article
     successfully_created: Article was successfully created.
     successfully_updated: Article was successfully updated.

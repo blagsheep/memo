@@ -6,6 +6,12 @@
   = link_to t('content.destroy'), @post, method: :delete, data: { confirm: 'Are you sure?' }
   %br
   %br
+
+- if @post.photo.attached? 
+  = image_tag(@post.photo.variant(resize_to_limit: [1200, 600]), :style => "width:100%;") 
+  %br
+  %br
+
 =render(@post)
 
 
@@ -25,11 +31,9 @@
 
 =# NOT USED CURRENTLY
 
-=#- if @post.photo.attached? 
-=#  
-=#  %br
-=#  = image_tag(@post.photo.variant(resize: 200), width: 200) 
-=#  %br
-=#  %br
+=# - if @post.photo.attached? 
+=#   = image_tag(@post.photo.variant(resize: 200), width: 200) 
+=#   %br
+=#   %br
 
 

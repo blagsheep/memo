@@ -54,9 +54,10 @@ de:
 
   posts:
     title: Titel
+    summary: Zusammenfassung
     body: Inhalt
     map: Karte
-    attachment: Anhang
+    attachment: Titelbild
     edit: Artikel bearbeiten
     successfully_created: Der Artikel wurde erfolgreich erstellt.
     successfully_updated: Der Artikel wurde erfolgreich aktualisiert.

@@ -1,22 +1,10 @@
  
 = post.user.name
 ="-"
-=#post.updated_at.strftime("%d.%m.%Y %H:%M")
 =post.updated_at.strftime("%d.%m.%Y")
 
-%br
-%br
+%p
+  %strong
+    =post.summary
+
 =post.body
-
-
-
-- if !post.body.embeds.empty?
-  = #post.body.embeds[1].variant(resize_to_limit: [200, 200]) 
-  = #post.body.embeds.count.to_s + " embedded attachments"
-
-  -# post.body.embeds.each do |embedded_image|
-    -# if embedded_image.image?
-      =# CGI.escape(embedded_image.variant(resize_to_limit: [60, 40]).processed.service_url)
-      =# debug(embedded_image.video?)
-      %br
-      %br

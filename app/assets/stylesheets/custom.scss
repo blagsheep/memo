@@ -107,6 +107,12 @@ body{
 }
 
 
+/*
+ * Error
+ */
+#error_explanation{
+  color:red;
+}
 
 /*
  * Typography
@@ -258,3 +264,41 @@ form{
 
 }
 
+
+
+
+
+
+
+
+.article_preview{
+  margin-top: 1rem;
+  display:flex;
+}
+
+.article_photo{
+  flex-shrink: 0; /* shrinks to 0 to apply 70% width*/
+  flex-basis: 30%; /* sets initial width to 70% */
+  margin-right: 1rem;
+  img{
+    width: 100%;
+  }
+}
+
+.article_summary{
+  flex-shrink: 0; /* shrinks to 0 to apply 70% width*/
+  flex-basis: 65%; /* sets initial width to 70% */
+}
+
+@media only screen and (max-width: 768px) {
+  .article_preview{
+    flex-direction: column;
+  }
+
+  .article_photo{
+    margin: 0 0 1rem;
+  }
+  .article_summary {
+    margin: 0rem;
+  }
+}

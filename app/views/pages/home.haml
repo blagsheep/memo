@@ -2,11 +2,32 @@
 - @posts.each do |post|
 
   %h2= link_to post.title , post
-  =render(post)
   
+  = post.user.name
+  ="-"
+  =post.updated_at.strftime("%d.%m.%Y")
+
+  
+  - if !post.body.embeds.empty? and ( post.body.embeds[0].image? or post.body.embeds[0].video? )
+    .article_preview  
+      .article_photo
+        = link_to image_tag(post.body.embeds[0].representation(resize_to_limit: [600, 400])), post
+      .article_summary
+        =post.summary
+  - else
+    .article_preview  
+      =post.summary
+
+
+  =#%p=post.body
+  
+
   %br
   %hr
   %br
 
 =raw(pagy_nav(@pagy))
+
+
+
  

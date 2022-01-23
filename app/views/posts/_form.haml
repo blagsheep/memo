@@ -9,6 +9,9 @@
     = f.label :title, t('posts.title')
     = f.text_field :title
   .field
+    = f.label :summary, t('posts.summary')
+    = f.text_area :summary
+  .field
     = f.label :body, t('posts.body')
     = f.rich_text_area :body
   =#.field
