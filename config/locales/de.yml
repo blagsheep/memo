@@ -54,6 +54,7 @@ de:
 
   posts:
     title: Titel
+    date: Datum
     summary: Zusammenfassung
     body: Inhalt
     map: Karte

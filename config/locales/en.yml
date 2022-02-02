@@ -55,6 +55,7 @@ en:
 
   posts:
     title: Title
+    date: Date
     subject: Summary
     body: Content
     map: Map

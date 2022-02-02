@@ -1,7 +1,8 @@
  
 = post.user.name
-="-"
-=post.updated_at.strftime("%d.%m.%Y")
+- if post.date
+  ="-"
+  =post.date.strftime("%d.%m.%Y")
 
 %p
   %strong
