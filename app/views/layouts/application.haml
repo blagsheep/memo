@@ -41,7 +41,7 @@
         
           %br
 
-        - if current_user
+        -# if current_user
           
           - if I18n.locale == :de 
             %a{ :href => root_url + "/users/" + current_user.id.to_s + "/locale/en"}
@@ -50,7 +50,7 @@
             %a{ :href => root_url + "/users/" + current_user.id.to_s + "/locale/de"}
               Deutsch
 
-        - else
+        -# else
 
           - if I18n.locale == :de 
             = link_to 'English', url_for( :locale => 'en' )
