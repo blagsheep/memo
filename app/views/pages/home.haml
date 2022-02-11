@@ -5,9 +5,11 @@
   
   = post.user.name
   ="-"
-  =post.updated_at.strftime("%d.%m.%Y")
+  - if post.date
+    =post.date.strftime("%d.%m.%Y")
+  - else
+    =post.updated_at.strftime("%d.%m.%Y")
 
-  
   - if !post.body.embeds.empty? and ( post.body.embeds[0].image? or post.body.embeds[0].video? )
     .article_preview  
       .article_photo
