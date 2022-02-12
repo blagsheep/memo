@@ -264,12 +264,14 @@ form{
 
 }
 
-
-
-
-
-
-
+.post{
+  img{
+    transition: transform .1s;
+  }
+  img:hover{
+    transform: scale(1.025);
+  }
+}
 
 .article_preview{
   margin-top: 1rem;
@@ -282,6 +284,10 @@ form{
   margin-right: 1rem;
   img{
     width: 100%;
+    transition: transform .1s;
+  }
+  img:hover{
+    transform: scale(1.025);
   }
 }
 
