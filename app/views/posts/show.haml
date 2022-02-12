@@ -1,6 +1,6 @@
 %h1= @post.title
 
-- if current_user == @post.user
+- if current_user
   = link_to t('content.edit'), edit_post_path(@post)
   ="-"
   = link_to t('content.destroy'), @post, method: :delete, data: { confirm: 'Are you sure?' }
