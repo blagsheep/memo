@@ -63,8 +63,8 @@ class PostsController < ApplicationController
     end
 
     def require_permission
-      if current_user != Post.find(params[:id]).user
-        redirect_to root_path, notice: t('posts.not_allowed_to_edit')
-      end
+      #if current_user != Post.find(params[:id]).user
+      #  redirect_to root_path, notice: t('posts.not_allowed_to_edit')
+      #end
     end
 end
