@@ -12,7 +12,7 @@
       <video 
         controls="true" 
         width="100%" 
-        poster="<%= blob.preview(resize_to_limit: [1024, 576]).processed.url %>"
+        poster="<%= polymorphic_url(blob.representation(resize_to_limit: [ 1024, 768 ])) %>"
         preload="none" 
       >
         <source src="<%= rails_blob_url(blob) %>" type="<%= blob.content_type %>"></source>   

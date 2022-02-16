@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-    @post.date = Time.now
+    @post.date = Date.current
     if @post.save
       redirect_to @post, notice: t('posts.successfully_created')
     else
